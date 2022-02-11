@@ -4,7 +4,7 @@
   "author" : "TakeWord",
   "version" : "1.0.1",
   "description" :  "New project for new developer",
-  "chrome_url_overrides": {
-    "newtab": "index.html"
+  "action": {
+    "default_popup" : "popup.html"
   }
 }
