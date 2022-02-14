@@ -1,13 +1,16 @@
 import React from "react";
-import  { render } from  "react-dom";
+import { render } from "react-dom";
+import { allWords } from "./helpers.allWords";
+import { getRandomWord } from "./helpers.functions.jsx";
 
 const TakeWord = () => {
-    return(
-        <div>
-            <h1>Extension Chrome</h1>
-            <p>This is exceedTeam</p>
-        </div>
-    )
-}
+  const wordAndTransl = getRandomWord(allWords);
+  return (
+    <div>
+      <h1>{wordAndTransl[0]}</h1>
+      <h2>{wordAndTransl[1]}</h2>
+    </div>
+  );
+};
 
-render(<TakeWord />, document.getElementById("react-target"))
+render(<TakeWord />, document.getElementById("react-target"));
