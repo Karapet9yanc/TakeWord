@@ -1,3 +1,36 @@
+// инициализация окна авторизации
+
+const singInOrUpWindow = {
+    isAccessAllowed: true,
+    wrapper : document.createElement('div'),
+    inputsContainer: document.createElement('div'),
+    loginInput: document.createElement('input'),
+    passwordInput: document.createElement('input'),
+    submitButton: document.createElement('button'),
+}
+
+// стили окна авторизации
+
+singInOrUpWindow.wrapper.style.height = '300px';
+singInOrUpWindow.wrapper.style.width = '100px';
+singInOrUpWindow.wrapper.style.position = 'absolute';
+singInOrUpWindow.wrapper.style.top = '10px';
+singInOrUpWindow.wrapper.style.right = '10px';
+singInOrUpWindow.wrapper.style.zIndex = '999';
+singInOrUpWindow.wrapper.style.backgroundColor = 'yellow';
+
+singInOrUpWindow.wrapper
+    .appendChild(singInOrUpWindow.inputsContainer);
+
+singInOrUpWindow.inputsContainer
+    .appendChild(singInOrUpWindow.loginInput)
+
+singInOrUpWindow.inputsContainer
+    .appendChild(singInOrUpWindow.passwordInput)
+
+singInOrUpWindow.inputsContainer
+    .appendChild(singInOrUpWindow.submitButton);
+
 // разработка попап
 
 const takeIt = document.createElement('div');
@@ -5,7 +38,7 @@ const takeIt = document.createElement('div');
 //разработка логотипа с стилями
 
 const logo = document.createElement('h1');
-logo.innerText = "Take Word";
+logo.innerText = "";
 logo.style.fontSize = '46px';
 logo.style.fontFamily = 'monospace';
 logo.style.fontVariant = 'petite-caps';
@@ -57,7 +90,7 @@ word.style.fontWeight = 'revert';
 
 const translDiv = document.createElement('div');
 const transl = document.createElement('h1');
-transl.innerText = "";
+transl.innerText = 'Test transctiption';
 translDiv.appendChild(transl);
 
 // стили дива с переводом
@@ -100,7 +133,9 @@ takeIt.appendChild(wordDiv);
 takeIt.appendChild(translDiv);
 takeIt.appendChild(button);
 
-document.getElementsByTagName('body')[0].appendChild(takeIt)
+singInOrUpWindow.isAccessAllowed ?
+    document.getElementsByTagName('body')[0].appendChild(takeIt)
+    : document.getElementsByTagName('body')[0].appendChild(singInOrUpWindow.wrapper)
 
 // функция получения рандомного слова
 
