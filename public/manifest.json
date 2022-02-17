@@ -4,7 +4,25 @@
   "author" : "TakeWord",
   "version" : "1.0.1",
   "description" :  "New project for new developer",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ],
   "action": {
-    "default_popup" : "popup.html"
-  }
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }, 
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ]
 }
